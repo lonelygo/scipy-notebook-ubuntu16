@@ -5,6 +5,9 @@ FROM $BASE_CONTAINER
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
+# Fix DL4006
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 USER root
 
 # Install all OS dependencies for fully functional notebook server
