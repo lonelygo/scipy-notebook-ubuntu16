@@ -7,6 +7,11 @@ LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 USER root
 
+# change source to tencent cloud
+RUN apt-get update && apt-get -yq install apt-transport-https wget
+RUN wget -O /etc/apt/sources.list http://mirrors.cloud.tencent.com/repo/ubuntu16_sources.list && apt-get clean
+RUN mkdir /root/.pip && echo "[global]\nindex-url = https://mirrors.cloud.tencent.com/pypi/simple\ntrusted-host = mirrors.cloud.tencent.com" > /root/.pip/pip.conf
+
 # Install all OS dependencies for fully functional notebook server
 RUN apt-get update --fix-missing
 
