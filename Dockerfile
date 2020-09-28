@@ -31,7 +31,8 @@ RUN apt-get install -yq --no-install-recommends \
     # ---- nbconvert dependencies ----
     texlive-xetex \
     texlive-fonts-recommended \
-    texlive-plain-generic \
+    # Bulide failed on error:Unable to locate package texlive-plain-generic
+    # texlive-plain-generic \
     # ----
     tzdata \
     unzip \
